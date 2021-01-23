@@ -18,4 +18,4 @@ const Person = require('./person') // this method of module is called common JS
 const person1 = new Person('John Doe', 30);
 
 // S15: Then concatinate the greeting function with the new person you created.
-person1.greeting();
+person1.greeting();d
