@@ -15,4 +15,27 @@ const path = require('path');
 fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
     if(err) throw err;
     console.log('File written to...')
+
+    // TO ADD MORE TEXT, USE APPEND METHOD
+    fs.appendFile(
+        path.join(__dirname, '/test', 'hello.txt'),
+        ' I love Node.js',
+        err => {
+            if (err) throw err;
+            console.log('File written to...')
+        }
+    )
+}); 
+
+// THIS WILL OVERRIDE THE PREVIOUS WRITEFILE METHOD
+// fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), ' I love Node.js ', err => {
+//     if(err) throw err;
+//     console.log('File written to...')
+// }); 
+
+
+// READ FILE
+fs.readFile(path.join(__dirname, '/test', 'hello.txt'), 'utf8', err => {
+    if(err) throw err;
+    console.log('File written to...')
 }); 
