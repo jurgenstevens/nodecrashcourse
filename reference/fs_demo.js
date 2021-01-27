@@ -12,20 +12,20 @@ const path = require('path');
 
 // CREATE AND WRITE TO FILE
 // Use writeFile method, join current directory, create test folder, hello.txt file, second parameter is for actually inserting the text 
-fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
-    if(err) throw err;
-    console.log('File written to...')
+// fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
+//     if(err) throw err;
+//     console.log('File written to...')
 
-    // TO ADD MORE TEXT, USE APPEND METHOD
-    fs.appendFile(
-        path.join(__dirname, '/test', 'hello.txt'),
-        ' I love Node.js',
-        err => {
-            if (err) throw err;
-            console.log('File written to...')
-        }
-    )
-}); 
+//     // TO ADD MORE TEXT, USE APPEND METHOD
+//     fs.appendFile(
+//         path.join(__dirname, '/test', 'hello.txt'),
+//         ' I love Node.js',
+//         err => {
+//             if (err) throw err;
+//             console.log('File written to...')
+//         }
+//     )
+// }); 
 
 // THIS WILL OVERRIDE THE PREVIOUS WRITEFILE METHOD
 // fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), ' I love Node.js ', err => {
@@ -35,7 +35,15 @@ fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => 
 
 
 // READ FILE
-fs.readFile(path.join(__dirname, '/test', 'hello.txt'), 'utf8', err => {
+// fs.readFile(path.join(__dirname, '/test', 'hello.txt'), 'utf8', err => {
+//     if(err) throw err;
+//     console.log('File written to...')
+// }); 
+
+
+// RENAME FILE
+// Use rename method and then for the first parameter include dirname and then the file you will be renaming, second parameter will be what you rename it to. Third and final parameter will be the callback.
+fs.rename(path.join(__dirname, '/test', 'hello.txt'), path.join(__dirname, '/test', 'helloworld.txt'), err => {
     if(err) throw err;
-    console.log('File written to...')
+    console.log('File has been renamed.')
 }); 
